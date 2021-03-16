@@ -9,11 +9,12 @@ services:
       context: ./docker-files/dev/php
     env_file:
       - .env.local
+    user: "1000:1000"
     volumes:
       - .:/app
 
   nginx:
-    container_name: bsm-nginx
+    container_name: exd-nginx
     image: exd-nginx
     build:
       context: docker-files/dev/nginx
