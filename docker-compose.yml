@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  phpfpm:
+    container_name: exd-php
+    image: exd-php
+    build:
+      context: ./docker-files/dev/php
+    env_file:
+      - .env.local
+    volumes:
+      - .:/app
+
+  nginx:
+    container_name: bsm-nginx
+    image: exd-nginx
+    build:
+      context: docker-files/dev/nginx
+    env_file:
+      - .env.local
+    ports:
+      - 80:80
+    depends_on:
+      - phpfpm
+    volumes:
+      - .:/app
