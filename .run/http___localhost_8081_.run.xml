@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="http://localhost:8081/" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Docker" start_url="http://localhost:8081//">
+    <method v="2" />
+  </configuration>
+</component>
